@@ -27,16 +27,14 @@ export default function Profile() {
   }
 
   return (
-    <div className="container">
-      <h1>Profile</h1>
+  <div className="container">
+    <h1>Profile</h1>
 
-      <div className="profile-info">
-        <p><strong>Name:</strong> {data.name}</p>
-        <p><strong>Email:</strong> {data.email}</p>
-        <p><strong>Verified:</strong> {data.isVerified ? "Yes" : "No"}</p>
-      </div>
+    <p><strong>Name:</strong> {data.name}</p>
+    <p><strong>Email:</strong> {data.email}</p>
+    <p><strong>Verified:</strong> {data.isVerified ? "Yes" : "No"}</p>
 
-      <button onClick={logout}>Logout</button>
-    </div>
-  );
+    <button onClick={logout}>Logout</button>
+  </div>
+);
 }

@@ -1,14 +1,12 @@
 body {
-  margin: 0;
   font-family: Inter, sans-serif;
-  background: #f7f8fc;
+  background: #f8f9fb;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-/* container */
 
 .container {
   background: white;
@@ -18,14 +16,12 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* title */
 
 h1 {
   margin-bottom: 20px;
   font-size: 24px;
 }
 
-/* inputs */
 
 input {
   width: 100%;
@@ -33,10 +29,8 @@ input {
   margin-bottom: 12px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  font-size: 14px;
 }
 
-/* buttons */
 
 button {
   width: 100%;
@@ -50,10 +44,4 @@ button {
 
 button:hover {
   opacity: 0.9;
-}
-
-p {
-  font-size: 14px;
-  margin-top: 10px;
-  text-align: center;
 }
