@@ -5,10 +5,12 @@ const {
   registerUser,
   loginUser,
   verifyEmail,
+  resendVerification,
 } = require("../controllers/auth.controller");
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/verify-email/:token", verifyEmail);
+router.post("/resend-verification", resendVerification);
 
 module.exports = router;

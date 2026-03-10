@@ -118,4 +118,49 @@ const verifyEmail = async (req, res) => {
   }
 };
 
-module.exports = { registerUser, loginUser, verifyEmail };
+const resendVerification = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
+
+    if (user.isVerified) {
+      return res.status(400).json({
+        message: "Email already verified",
+      });
+    }
+
+    const verificationToken = crypto.randomBytes(32).toString("hex");
+
+    user.verificationToken = verificationToken;
+    user.verificationTokenExpiry = Date.now() + 3600000;
+
+    await user.save();
+
+    const verifyLink = `http://localhost:3000/api/auth/verify-email/${verificationToken}`;
+
+    await sendEmail(
+      email,
+      "Verify your account",
+      `Click the link below to verify your account:
+
+${verifyLink}`,
+    );
+
+    res.json({
+      message: "Verification email sent again",
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
+module.exports = { registerUser, loginUser, verifyEmail, resendVerification };
