@@ -194,7 +194,28 @@ http://localhost:3000
 
 
 ---
+## Screenshots
 
+### 1. Register Page
+![Register](screenshots/1_register.png)
+
+### 2. Account Created
+![Account Created](screenshots/2_accountCreated.png)
+
+### 3. Login Before Verification
+![Login Verification](screenshots/3_loginVerification.png)
+
+### 4. Verification Email
+![Verification Email](screenshots/4_mailVerification.png)
+
+### 5. Email Verified
+![Verification Success](screenshots/5_verificationLink.png)
+
+### 6. Profile Page
+![Profile Page](screenshots/6_profilePage.png)
+
+### 7. Delete Account Confirmation
+![Delete Account](screenshots/7_EnterPassToDelete.png)
 ---
 
 # Author
